@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="box">
+    <div class="box__header">
+      <h1>Sign Up</h1>
+    </div>
+    <form class="box__form" #signUpForm="ngForm" autocomplete="off" (ngSubmit)="signup(signUpForm)">
+      <input class="input-text" #username="ngModel" ngModel required minlength="8" maxlength="25" type="text"
+        id="username" name="username" placeholder="Username" />
+      <div class="error">
+        <p *ngIf="username.touched &&username.errors?.required" [@ErrorAnimation]> This field is required </p>
+        <p *ngIf="username.touched && username.errors?.minlength" [@ErrorAnimation]> Username is too short </p>
+        <p *ngIf="username.touched && username.errors?.maxlength" [@ErrorAnimation]> Username is too long </p>
+      </div>
+      <input class="input-text" #password="ngModel" ngModel required minlength="8" maxlength="25" type="password"
+        id="password" name="password" placeholder="Password" />
+      <div class="error">
+        <p *ngIf="password.touched &&password.errors?.required" [@ErrorAnimation]> This field is required </p>
+        <p *ngIf="password.touched && password.errors?.minlength" [@ErrorAnimation]> password is too short </p>
+        <p *ngIf="password.touched && password.errors?.maxlength" [@ErrorAnimation]> password is too long </p>
+      </div>
+      <div class="term">
+        <input type="checkbox" #termCheck="ngModel" ngModel required name="termCheck" id="termCheck" />
+        <label for="termCheck">
+          <span>I agree to the <a href="#">Term</a> and <a href="#">Privacy Policy</a></span>
+        </label>
+      </div>
+      <button #submit type="submit" class="submit-btn" [disabled]="signUpForm.invalid">Sign up</button>
+      <div class="registered">
+        <p>Already have an account? <a routerLink="/login">Log in</a></p>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,3 @@
+<div class="wrapper" *ngFor="let notification of notifications; index as i" [@inOutAnimation]>
+  <div class="notification" (click)="remove(i)">{{notification.message}}</div>
+</div>
