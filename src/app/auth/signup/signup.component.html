@@ -15,8 +15,8 @@
         id="password" name="password" placeholder="Password" />
       <div class="error">
         <p *ngIf="password.touched &&password.errors?.required" [@ErrorAnimation]> This field is required </p>
-        <p *ngIf="password.touched && password.errors?.minlength" [@ErrorAnimation]> password is too short </p>
-        <p *ngIf="password.touched && password.errors?.maxlength" [@ErrorAnimation]> password is too long </p>
+        <p *ngIf="password.touched && password.errors?.minlength" [@ErrorAnimation]> Password is too short </p>
+        <p *ngIf="password.touched && password.errors?.maxlength" [@ErrorAnimation]> Password is too long </p>
       </div>
       <div class="term">
         <input type="checkbox" #termCheck="ngModel" ngModel required name="termCheck" id="termCheck" />
