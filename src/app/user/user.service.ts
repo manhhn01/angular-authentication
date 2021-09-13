@@ -8,7 +8,7 @@ import { AuthService } from '../auth/auth.service';
   providedIn: 'root'
 })
 export class UserService {
-  private readonly apiHost = 'http://localhost:3000';
+  private readonly apiHost = 'https://api.mn07.xyz/angular-auth';
   constructor(private http: HttpClient, private auth: AuthService) { }
 
   getUsername(): Observable<any> {

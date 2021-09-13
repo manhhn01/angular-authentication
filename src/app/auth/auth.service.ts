@@ -8,7 +8,7 @@ import { i18nMetaToJSDoc } from '@angular/compiler/src/render3/view/i18n/meta';
   providedIn: 'root',
 })
 export class AuthService {
-  private readonly apiHost = 'http://localhost:3000';
+  private readonly apiHost = 'https://api.mn07.xyz/angular-auth';
   private isAuth: boolean = false;
   private token: string = '';
   constructor(
