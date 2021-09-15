@@ -9,12 +9,12 @@ const checkTokenMiddleware = require('./middleware/checkToken')
 
 const User = require('./models/user');
 
-mongoose.connect('mongodb://mn07:123456@localhost:27017/angularAuth?authSource=admin')
+mongoose.connect('mongodb://localhost:27017/angularAuth')
   .then(() => {
     console.log('db connected');
   })
   .catch((err) => {
-    console.err(err);
+    console.log(err);
   })
 
 const app = express();
@@ -37,13 +37,7 @@ app.post('/login', (req, res) => {
     })
     .then((result) => {
       if (result) {
-        let token;
-        if (req.body.rememberMe) {
-          token = null;
-          //todo
-        }
-        else
-          token = jwt.sign({ username: req.body.username }, config.tokenSecret, { expiresIn: config.tokenLife });
+        const token = jwt.sign({ username: req.body.username }, config.tokenSecret, { expiresIn: config.tokenLife });
         res.json({
           success: true,
           message: 'Login successful',

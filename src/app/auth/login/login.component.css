@@ -36,12 +36,6 @@
   border-bottom-color: var(--main-color);
 }
 
-.box__form .remember {
-  padding: 5px;
-  margin-bottom: 15px;
-  cursor: pointer;
-}
-
 .box__form .submit-btn {
   height: 3rem;
   border: none;

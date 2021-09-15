@@ -18,12 +18,6 @@
         <p *ngIf="password.touched && password.errors?.minlength" [@ErrorAnimation]> Password is too short </p>
         <p *ngIf="password.touched && password.errors?.maxlength" [@ErrorAnimation]> Password is too long </p>
       </div>
-      <div class="remember">
-        <input type="checkbox" #remember="ngModel" ngModel name="remember" id="remember"/>
-        <label for="remember">
-          <span>Remember me</span>
-        </label>
-      </div>
       <button #submit type="submit" class="submit-btn" [disabled]="loginForm.invalid">Login</button>
       <div class="not-registered">
         <p>Not registered yet? <a routerLink="/signup">Create an account</a></p>
