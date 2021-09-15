@@ -17,8 +17,8 @@ export class AuthService {
     private notificationsService: NotificationsService
   ) {}
 
-  login(username: string, password: string, rememberMe: boolean): any {
-    var data = { username: username, password: password, rememberMe: rememberMe };
+  login(username: string, password: string): any {
+    var data = { username: username, password: password };
     this.http.post<any>(this.apiHost + '/login', data).subscribe(
       (response) => {
         if (response.success) {
