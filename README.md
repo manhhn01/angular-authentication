@@ -1,7 +1,5 @@
 # Angular-authentication
 
-## Demo
-https://manhhn01.github.io/angular-authentication/
 ## Setup
 
 ```shell
